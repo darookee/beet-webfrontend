@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/soundmanager2/2.97a.20150601/script/soundmanager2-nodebug-jsmin.js"></script>
+        <script src="min.js"></script>
+        <script src="player.js"></script>
+        <script>
+            ;(function(){
+                minLib.ready(function(){
+                    initPlayer('//192.168.0.1:8337', [16,17]);
+                });
+            }())
+        </script>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" />
+    </head>
+    <body>
+        <div id="list">
+            <div id="template" style="background-image: url([[ image ]]);" data-id="[[ id ]]" data-albumid="[[ mb_albumid ]]" data-albumtitle="[[ album ]]" data-title="[[ title ]]" data-artist="[[ artist ]]">
+                <span class="album--artist">[[ artist ]]</span>
+                <span class="album--title">[[ title ]]</span>
+                <span class="overlay">&nbsp;</span>
+            </div>
+        </div>
+        <div id="player">
+            <span class="player--title"></span>
+            <span class="player--duration">
+                <span class="player--duration_current">00:00</span>/<span class="player--duration_total">00:00</span>
+            </span>
+            <span class="player--play"><i class="fa fa-play fa-2x"></i></span>
+            <audio id="player--audio"></audio>
+        </div>
+    </body>
+</html>
